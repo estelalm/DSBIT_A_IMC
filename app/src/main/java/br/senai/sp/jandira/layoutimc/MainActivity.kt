@@ -22,6 +22,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -93,7 +94,8 @@ fun Greeting() {
         Card (
             modifier = Modifier
                 .padding(horizontal = 40.dp)
-                .offset(y = -40.dp)
+                .offset(y = -40.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp, hoveredElevation = 20.dp)
         ) {
             //Coluna para organizar os elementos um em cima do outro
             Column (
