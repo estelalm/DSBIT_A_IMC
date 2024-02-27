@@ -10,6 +10,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -128,7 +129,9 @@ fun Greeting() {
                         unfocusedPlaceholderColor = Color(0xffAFA9A9),
                         unfocusedContainerColor = Color.White
                     ),
-                    modifier = Modifier.padding(vertical = 10.dp).height(50.dp),
+                    modifier = Modifier
+                        .padding(vertical = 10.dp)
+                        .height(50.dp),
                     shape = RoundedCornerShape(10.dp)
                 )
 
@@ -144,13 +147,15 @@ fun Greeting() {
                         unfocusedPlaceholderColor = Color(0xffAFA9A9),
                         unfocusedContainerColor = Color.White
                     ),
-                    modifier = Modifier.padding(vertical = 10.dp).height(50.dp),
+                    modifier = Modifier
+                        .padding(vertical = 10.dp)
+                        .height(50.dp),
                     shape = RoundedCornerShape(10.dp)
                 )
 
                 Button(
                     modifier = Modifier
-                        .padding(vertical =  24.dp)
+                        .padding(vertical = 24.dp)
                         .fillMaxWidth(),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(0xffED145B)
@@ -173,12 +178,15 @@ fun Greeting() {
             ),
             elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
         ){
-                Row (modifier = Modifier.padding(24.dp), verticalAlignment = Alignment.CenterVertically){
+                Row (modifier = Modifier
+                    .padding(24.dp)
+                    .fillMaxWidth(), verticalAlignment = Alignment.CenterVertically){
                     Column (horizontalAlignment = Alignment.CenterHorizontally) {
                         Text(text = "Resultado", color = Color.White, textAlign = TextAlign.Center, style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
                         Text(text = "Peso  Ideal", color = Color.White, fontSize = 20.sp, modifier = Modifier.padding(top = 6.dp), style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
                     }
-                    Text(text = "21.3", modifier = Modifier.offset(x = 75.dp, y = 10.dp), fontSize = 40.sp, color = Color.White, fontWeight = FontWeight.ExtraBold, style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.ExtraBold))
+                    Spacer(modifier = Modifier.width(70.dp))
+                    Text(text = "21.3", modifier = Modifier.offset(y = 10.dp), fontSize = 40.sp, color = Color.White, fontWeight = FontWeight.ExtraBold, style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.ExtraBold))
                 }
         }
     }
