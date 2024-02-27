@@ -7,6 +7,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -73,7 +74,7 @@ fun Greeting() {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
-                .background(color = Color.Red)
+                .background(color = Color(0xffED145B))
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
 
@@ -84,6 +85,7 @@ fun Greeting() {
                 alignment = Alignment.Center ,
                 modifier = Modifier.size(70.dp))
             Text(
+                modifier = Modifier.padding(16 .dp),
                 text = "Calculadora IMC",
                 color = Color.White,
                 fontSize = 24.sp,
@@ -94,8 +96,9 @@ fun Greeting() {
         Card (
             modifier = Modifier
                 .padding(horizontal = 40.dp)
-                .offset(y = -40.dp),
-            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp, hoveredElevation = 20.dp)
+                .offset(y = -30.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp, hoveredElevation = 20.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xffF9F6F6))
         ) {
             //Coluna para organizar os elementos um em cima do outro
             Column (
@@ -106,71 +109,75 @@ fun Greeting() {
                         .padding(24.dp)
                         .fillMaxWidth(),
                     text = "Seus dados",
-                    color = Color.Red,
+                    color = Color(0xffED145B),
                     fontWeight = FontWeight.ExtraBold,
                     fontSize = 26.sp,
                     textAlign = TextAlign.Center
                 )
 
-                Text(text = "Seu peso", color = Color.Red)
+                Text(text = "Seu peso:", color = Color(0xffED145B))
                 OutlinedTextField(
                     value = "",
                     onValueChange = {},
                     placeholder = {
-                        Text(text = "Seu peso em Kg")
+                        Text(text = "Seu peso em Kg", fontSize = 15.sp, modifier = Modifier.offset(y = -3.dp))
                     },
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.Red,
-                        unfocusedPlaceholderColor = Color.LightGray,
+                        unfocusedBorderColor = Color(0xffED145B),
+                        unfocusedPlaceholderColor = Color(0xffAFA9A9),
                         unfocusedContainerColor = Color.White
                     ),
-                    modifier = Modifier.padding(8.dp)
+                    modifier = Modifier.padding(8.dp).height(50.dp),
+                    shape = RoundedCornerShape(10.dp)
                 )
 
-                Text(text = "Sua altura", color = Color.Red)
+                Text(text = "Sua altura:", color = Color(0xffED145B))
                 OutlinedTextField(
                     value = "",
                     onValueChange = {},
                     placeholder = {
-                        Text(text = "Sua altura em cm")
+                        Text(text = "Sua altura em cm", fontSize = 15.sp, modifier = Modifier.offset(y = -2.dp))
                     },
                     colors = OutlinedTextFieldDefaults.colors(
-                        unfocusedBorderColor = Color.Red,
-                        unfocusedPlaceholderColor = Color.LightGray,
+                        unfocusedBorderColor = Color(0xffED145B),
+                        unfocusedPlaceholderColor = Color(0xffAFA9A9),
                         unfocusedContainerColor = Color.White
                     ),
-                    modifier = Modifier.padding(8.dp)
+                    modifier = Modifier.padding(8.dp).height(50.dp),
+                    shape = RoundedCornerShape(10.dp)
                 )
 
                 Button(
                     modifier = Modifier
-                        .padding(24.dp)
+                        .padding(vertical =  24.dp)
                         .fillMaxWidth(),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color.Red
+                        containerColor = Color(0xffED145B)
                     ),
-                    shape = RectangleShape,
+                    shape =  RoundedCornerShape(8.dp),
                     onClick = {}
                 ) {
-                    Text(text = "CALCULAR")
+                    Text(text = "CALCULAR", modifier = Modifier.padding(vertical = 6.dp), fontWeight = FontWeight.Black, letterSpacing = 1.sp)
                 }
             }
         }
 
         Card (
-            modifier = Modifier.fillMaxWidth().padding(horizontal = 40.dp),
-
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 40.dp),
+            border = BorderStroke(1.dp, Color.Red),
             colors = CardDefaults.cardColors(
-                containerColor = Color.Green
-
-            )
+                containerColor = Color(0xff329F6B)
+            ),
+            elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
         ){
-                Row (modifier = Modifier.padding(16.dp)){
-                    Column {
-                        Text(text = "Resultado", color = Color.White)
-                        Text(text = "Peso Ideal", color = Color.White)
+                Row (modifier = Modifier.padding(24.dp)){
+                    Column (horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(text = "Resultado", color = Color.White, textAlign = TextAlign.Center)
+                        Text(text = "Peso  Ideal", color = Color.White, fontSize = 20.sp, modifier = Modifier.padding(top = 6.dp))
                     }
-                    Text(text = "21.3", fontSize = 40.sp, color = Color.White)
+                    Text(text = "21.3", modifier = Modifier.offset(x = 75.dp), fontSize = 40.sp, color = Color.White, fontWeight = FontWeight.ExtraBold)
                 }
         }
     }
