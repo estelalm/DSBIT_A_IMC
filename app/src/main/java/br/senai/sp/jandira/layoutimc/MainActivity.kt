@@ -127,11 +127,11 @@ fun Greeting() {
                         unfocusedPlaceholderColor = Color(0xffAFA9A9),
                         unfocusedContainerColor = Color.White
                     ),
-                    modifier = Modifier.padding(8.dp).height(50.dp),
+                    modifier = Modifier.padding(vertical = 10.dp).height(50.dp),
                     shape = RoundedCornerShape(10.dp)
                 )
 
-                Text(text = "Sua altura:", color = Color(0xffED145B))
+                Text(text = "Sua altura:", color = Color(0xffED145B), modifier = Modifier.padding(top = 10.dp))
                 OutlinedTextField(
                     value = "",
                     onValueChange = {},
@@ -143,7 +143,7 @@ fun Greeting() {
                         unfocusedPlaceholderColor = Color(0xffAFA9A9),
                         unfocusedContainerColor = Color.White
                     ),
-                    modifier = Modifier.padding(8.dp).height(50.dp),
+                    modifier = Modifier.padding(vertical = 10.dp).height(50.dp),
                     shape = RoundedCornerShape(10.dp)
                 )
 
