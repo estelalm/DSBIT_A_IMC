@@ -38,6 +38,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -45,6 +46,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.senai.sp.jandira.layoutimc.ui.theme.LayoutIMCTheme
+import br.senai.sp.jandira.layoutimc.ui.theme.Poppins
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,8 +91,7 @@ fun Greeting() {
                 text = "Calculadora IMC",
                 color = Color.White,
                 fontSize = 24.sp,
-                fontFamily = FontFamily.SansSerif,
-                fontWeight = FontWeight.ExtraBold)
+                style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Bold))
         }
         //Card com os inputs para a calculadora
         Card (
@@ -110,17 +111,17 @@ fun Greeting() {
                         .fillMaxWidth(),
                     text = "Seus dados",
                     color = Color(0xffED145B),
-                    fontWeight = FontWeight.ExtraBold,
+                    style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.ExtraBold),
                     fontSize = 26.sp,
                     textAlign = TextAlign.Center
                 )
 
-                Text(text = "Seu peso:", color = Color(0xffED145B))
+                Text(text = "Seu peso:", color = Color(0xffED145B), style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
                 OutlinedTextField(
                     value = "",
                     onValueChange = {},
                     placeholder = {
-                        Text(text = "Seu peso em Kg", fontSize = 15.sp, modifier = Modifier.offset(y = -3.dp))
+                        Text(text = "Seu peso em Kg", fontSize = 15.sp, modifier = Modifier.offset(y = -3.dp), style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         unfocusedBorderColor = Color(0xffED145B),
@@ -131,12 +132,12 @@ fun Greeting() {
                     shape = RoundedCornerShape(10.dp)
                 )
 
-                Text(text = "Sua altura:", color = Color(0xffED145B), modifier = Modifier.padding(top = 10.dp))
+                Text(text = "Sua altura:", color = Color(0xffED145B), modifier = Modifier.padding(top = 10.dp), style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
                 OutlinedTextField(
                     value = "",
                     onValueChange = {},
                     placeholder = {
-                        Text(text = "Sua altura em cm", fontSize = 15.sp, modifier = Modifier.offset(y = -2.dp))
+                        Text(text = "Sua altura em cm", fontSize = 15.sp, modifier = Modifier.offset(y = -2.dp), style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         unfocusedBorderColor = Color(0xffED145B),
@@ -157,7 +158,7 @@ fun Greeting() {
                     shape =  RoundedCornerShape(8.dp),
                     onClick = {}
                 ) {
-                    Text(text = "CALCULAR", modifier = Modifier.padding(vertical = 6.dp), fontWeight = FontWeight.Black, letterSpacing = 1.sp)
+                    Text(text = "CALCULAR", modifier = Modifier.padding(vertical = 6.dp), fontWeight = FontWeight.Black, letterSpacing = 1.sp, style = TextStyle(fontFamily = Poppins))
                 }
             }
         }
@@ -172,12 +173,12 @@ fun Greeting() {
             ),
             elevation = CardDefaults.cardElevation(defaultElevation = 6.dp)
         ){
-                Row (modifier = Modifier.padding(24.dp)){
+                Row (modifier = Modifier.padding(24.dp), verticalAlignment = Alignment.CenterVertically){
                     Column (horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(text = "Resultado", color = Color.White, textAlign = TextAlign.Center)
-                        Text(text = "Peso  Ideal", color = Color.White, fontSize = 20.sp, modifier = Modifier.padding(top = 6.dp))
+                        Text(text = "Resultado", color = Color.White, textAlign = TextAlign.Center, style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
+                        Text(text = "Peso  Ideal", color = Color.White, fontSize = 20.sp, modifier = Modifier.padding(top = 6.dp), style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.Normal))
                     }
-                    Text(text = "21.3", modifier = Modifier.offset(x = 75.dp), fontSize = 40.sp, color = Color.White, fontWeight = FontWeight.ExtraBold)
+                    Text(text = "21.3", modifier = Modifier.offset(x = 75.dp, y = 10.dp), fontSize = 40.sp, color = Color.White, fontWeight = FontWeight.ExtraBold, style = TextStyle(fontFamily = Poppins, fontWeight = FontWeight.ExtraBold))
                 }
         }
     }
